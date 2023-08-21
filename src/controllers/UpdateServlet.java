@@ -51,6 +51,7 @@ public class UpdateServlet extends HttpServlet {
 
             //データベースを更新
             em.getTransaction().begin();
+            request.getSession().setAttribute("flush", "更新が完了しました。");
             em.getTransaction().commit();
             em.close();
 
